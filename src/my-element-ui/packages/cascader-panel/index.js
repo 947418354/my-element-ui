@@ -5,5 +5,5 @@ import CascaderPanel from './src/cascader-panel';
 //   Vue.component(CascaderPanel.name, CascaderPanel);
 // };
 
-const t = 'ttttt'
+// const t = 'ttttt'
 export default CascaderPanel;

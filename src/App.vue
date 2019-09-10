@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>我是App.vue</div>
+    <router-view></router-view>
   </div>
 </template>
 
