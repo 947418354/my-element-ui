@@ -18,7 +18,13 @@ var router = new Router({
         {
             path: '/loading',
             component: loading
-        }
+        },
+        {
+            path: '/collapse',
+            components: {
+                default: () => import(/* webpackChunkName: "collapse" */'@/pagesUsage/collapse/collapse.vue')
+            }
+        },
     ]
 })
 
