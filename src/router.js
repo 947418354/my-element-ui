@@ -25,6 +25,19 @@ var router = new Router({
                 default: () => import(/* webpackChunkName: "collapse" */'@/pagesUsage/collapse/collapse.vue')
             }
         },
+        {
+            path: '/loopForm',
+            components: {
+                default: () => import(/* webpackChunkName: "loopForm" */'@/views/loopForm.vue')
+            }
+        },
+        {
+            name: 'table',
+            path: '/table',
+            components: {
+                default: () => import(/* webpackChunkName: "table" */'@/views/table.vue')
+            }
+        },
     ]
 })
 
