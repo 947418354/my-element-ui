@@ -32,6 +32,12 @@ var router = new Router({
             }
         },
         {
+            path: '/select',
+            components: {
+                default: () => import(/* webpackChunkName: "select" */'@/views/select.vue')
+            }
+        },
+        {
             name: 'table',
             path: '/table',
             components: {

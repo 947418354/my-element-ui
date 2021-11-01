@@ -18,6 +18,7 @@
               <i class="el-icon-location"></i>
               <span>Form</span>
             </template>
+            <el-menu-item index="select">Select</el-menu-item>
             <el-menu-item index="loopForm">Form</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
