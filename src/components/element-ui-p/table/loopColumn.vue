@@ -4,10 +4,10 @@
       :fixed="item.fixed"
       :label="item.label"
       :title="item.label"
-      :align="item.textAlign ? item.textAlign : item.isNaN ? 'left' : 'right'"
       :class-name="item.className"
       :width="item.width"
       :formatter="item.formatter"
+      v-bind="item"
     >
       <template v-if="item.children && item.children.length > 0">
         <loopColumn v-for="(item1, idx1) in item.children" :key="idx1" :item="item1"></loopColumn>

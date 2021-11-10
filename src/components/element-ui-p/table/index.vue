@@ -4,10 +4,10 @@
     class="table-template-common"
     border
     :height="height"
-    :max-height="height ? height : maxHeight"
     :show-header="showHeader"
     :data="tableData"
     :span-method="spanMethod"
+    v-bind="$attrs"
   >
     <loopColumn v-for="(item, idx) in labelMap" :key="idx" :item="item"> </loopColumn>
   </el-table>
@@ -21,10 +21,10 @@ export default {
   // isGlobal: true, //是否全局注册
   name: 'ElTableP',  //全局组件首驼峰
   props: {
-    tableVisible: {
-      type: Boolean,
-      default: true, //默认显示
-    },
+    // tableVisible: {
+    //   type: Boolean,
+    //   default: true, //默认显示
+    // },
     labelMap: Array,
     tableData: Array,
     fixedLabelKeys: Array,
@@ -37,16 +37,13 @@ export default {
       default: true,
     },
     returnIndicator: Array,
-    maxHeight: {
-      type: [String, Number],
-      default: "340",
-    },
     height: [String, Number],
     maxRow: Number,
     spanMethod: Function,
   },
   data() {
     return {
+      tableVisible: true,
       watchLocked: false,
     };
   },
@@ -57,6 +54,10 @@ export default {
     this.checkTableData();
   },
   methods: {
+    reMount() {
+      this.tableVisible = false
+      this.$nextTick(() => this.tableVisible = true)
+    },
     checkTableData() {
       if (this.maxRow) {
         this.tableData.splice(this.maxRow);
@@ -103,17 +104,6 @@ export default {
     },
     getQuartileIcon(q) {
       return `quartile-icons quartile-${q}`;
-    },
-  },
-  watch: {
-    tableData() {
-      if (!this.watchLocked) {
-        this.watchLocked = true;
-        this.checkTableData();
-        this.$nextTick(() => {
-          this.watchLocked = false;
-        });
-      }
     },
   },
   filters: {
