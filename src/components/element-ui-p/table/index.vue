@@ -9,13 +9,17 @@
     :span-method="spanMethod"
     v-bind="$attrs"
   >
-    <loopColumn v-for="(item, idx) in labelMap" :key="idx" :item="item"> </loopColumn>
+    <template v-for="(item, idx) in labelMap">
+      <templateColumn v-if="item.cellRender" :key="idx" :item="item"></templateColumn>
+      <loopColumn v-else :key="idx" :item="item"> </loopColumn>   
+    </template>
   </el-table>
 </template>
 
 <script>
 import _ from "lodash";
 import loopColumn from "./loopColumn.vue";
+import templateColumn from "./templateColumn.vue";
 
 export default {
   // isGlobal: true, //是否全局注册
@@ -49,6 +53,7 @@ export default {
   },
   components: {
     loopColumn,
+    templateColumn,
   },
   mounted() {
     this.checkTableData();

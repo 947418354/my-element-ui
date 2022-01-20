@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>我是App.vue</div>
+    <div class="fasten-item">我是App.vue</div>
     <el-row class="tac">
       <el-col :span="4">
         <el-menu
@@ -75,8 +75,10 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 </style>

@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import myLoading from './my-element-ui/packages/loading'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import '@duguqiubai/boot-style/boot.css'
+import '@/assets/styles/common.less'
 
 Vue.config.productionTip = false
-Vue.use(myLoading)
 Vue.use(ElementUI)
 
 let contexts = require.context('@/components/element-ui-p', true, /\.vue$/)

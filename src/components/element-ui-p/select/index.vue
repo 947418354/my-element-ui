@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="less">
 .el-select-p {
   display: inline-block;
   .label {
